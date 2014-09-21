@@ -1,0 +1,29 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+
+
+
+    <bean id="jamonInterceptor" class="org.springframework.aop.interceptor.JamonPerformanceMonitorInterceptor">
+        <property name="trackAllInvocations" value="true"/>
+        <property name="loggerName" value="performance.logger"/>
+    </bean>
+
+    <aop:config proxy-target-class="true">
+        <!--<aop:pointcut id="domainMonitoringPointcut" expression="-->
+            <!--execution(* com.ostdlabs.etracker.api.domain.repositories..*.*(..))-->
+            <!--&amp;&amp; !execution(* com.ostdlabs.etracker.api.domain.repositories.*ClassRepository*..*.*(..))-->
+            <!--"/>-->
+
+
+        <aop:pointcut id="restMonitoringPointcut" expression="
+            execution(* com.ostdlabs.monitor.api.rest..*.*(..))
+            "/>
+
+        <aop:advisor pointcut-ref="restMonitoringPointcut" advice-ref="jamonInterceptor"/>
+        <!--<aop:advisor pointcut-ref="domainMonitoringPointcut" advice-ref="jamonInterceptor"/>-->
+    </aop:config>
+
+</beans>
