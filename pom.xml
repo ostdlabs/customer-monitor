@@ -4,7 +4,6 @@
     <groupId>com.ostdlabs.etracker</groupId>
     <artifactId>customer-monitor</artifactId>
     <version>1.02-SNAPSHOT</version>
-    <packaging>pom</packaging>
 
     <name>customer's database monitor service</name>
 
