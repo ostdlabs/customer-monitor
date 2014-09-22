@@ -2,8 +2,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.ostdlabs.etracker</groupId>
-    <artifactId>customer-monitor</artifactId>
-    <version>1.01</version>
+    <artifactId>cusromer-monitor</artifactId>
+    <version>1.01-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>customer's database monitor service</name>
