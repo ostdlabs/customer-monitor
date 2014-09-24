@@ -3,13 +3,13 @@
 
     <groupId>com.ostdlabs.etracker</groupId>
     <artifactId>customer-monitor</artifactId>
-    <version>1.02</version>
+    <version>1.02-SNAPSHOT</version>
 
     <name>customer's database monitor service</name>
 
     <scm>
         <developerConnection>scm:git:git@github.com:ostdlabs/customer-monitor.git</developerConnection>
-        <tag>customer-monitor-1.02</tag>
+        <tag>customer-monitor-1.01</tag>
     </scm>
 
     <distributionManagement>
